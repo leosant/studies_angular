@@ -1,0 +1,49 @@
+<h5>*ngIf</h5>
+<div *ngIf="cursos.length > 0">
+  Lista de cursos aqui!
+</div>
+<div *ngIf="cursos.length === 0">
+  Não existem cursos para serem listados.
+</div>
+<h3>----------------</h3>
+<h5>Utilizando lógica pela variável</h5>
+<div *ngIf="isCurso">
+  Lista de cursos aqui!
+</div>
+<div *ngIf="!isCurso">
+  Não existem cursos para serem listados.
+</div>
+<h3>----------------</h3>
+<h5>Utilizando lógica pelo button</h5>
+<div *ngIf="isCurso">
+  Lista de cursos aqui!
+</div>
+<div *ngIf="!isCurso">
+  Não existem cursos para serem listados.
+</div>
+<button (click)="onMostrarCursos()">Mostrar ou esconder cursos</button>
+<h3>----------------</h3>
+<h5>Hidden como alternativa</h5>
+<div [hidden]="!isCurso">
+  Lista de cursos aqui!
+</div>
+<div [hidden]="isCurso">
+  Não existem cursos para serem listados.
+</div>
+<h3>----------------</h3>
+<h5>Apartir do angular v4 temos o else no ngIf</h5>
+<div *ngIf="isCurso; else elseCurso">
+  Lista de cursos aqui!
+</div>
+<ng-template #elseCurso>
+  Não existem cursos para serem listados.
+</ng-template>
+<h3>----------------</h3>
+<h5>Outra maneira é mostrando o resultado</h5>
+<div *ngIf="isCurso as value; else elseCurso">
+  Resultado: {{ value }}
+  Lista de cursos aqui!
+</div>
+<ng-template #elseCurso>
+  Não existem cursos para serem listados.
+</ng-template>
