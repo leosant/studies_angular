@@ -47,3 +47,12 @@
 <ng-template #elseCurso>
   Não existem cursos para serem listados.
 </ng-template>
+<br><br>
+<!--estrutura que o ngIf faz por debaixo do pano-->
+<ng-template [ngIf]="isCurso">
+  <div>Lista de cursos aqui!</div>
+</ng-template>
+<!--Outra forma-->
+<div template="isCurso">
+  Lista de cursos aqui!
+</div>
